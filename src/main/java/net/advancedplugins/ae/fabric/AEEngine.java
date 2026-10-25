@@ -11,15 +11,15 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.Identifier;
 
 import java.io.InputStream;
@@ -30,15 +30,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.regex.Matcher;
 import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Asl AdvancedEnchantments effektlarini ae_enchants.json dan oʻqib ishlatadi.
- * Qoʻllab-quvvatlanadi: POTION, ADD_HEALTH, DO_HARM, LIGHTNING, BURN, EXTINGUISH, PULL_AWAY, PULL_CLOSER.
- * Qoʻllab-quvvatlanmaydi (hali): INCREASE/DECREASE/DOUBLE/HALF/NEGATE_DAMAGE, WAIT, GUARD, CURE,
- * CANCEL_EVENT, BLOOD va boshqalar. Ularni keyingi bosqichda qoʻshamiz.
+ * Qoʻllab-quvvatlanadi: POTION, ADD_HEALTH, DO_HARM, LIGHTNING, BURN, EXTINGUISH, PULL_AWAY, PULL_CLOSER,
+ * DECREASE_DAMAGE, NEGATE_DAMAGE, HALF_DAMAGE, DOUBLE_DAMAGE, INCREASE_DAMAGE, CANCEL_EVENT.
  */
 public final class AEEngine {
 
@@ -56,6 +55,7 @@ public final class AEEngine {
     private static final Pattern RANDOM_NUMBER = Pattern.compile("<random number>(-?\\d+)-(-?\\d+)</random number>");
     private static final Pattern CHANCE_TAG = Pattern.compile("<chance>\\s*\\d+\\s*</chance>");
     private static boolean busy = false;
+    private static float currentDamage = 0f;
 
     private static final EquipmentSlot[] ARMOR = {
             EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
@@ -127,11 +127,10 @@ public final class AEEngine {
         return holder.getWorld().getRegistryManager()
                 .get(RegistryKeys.ENCHANTMENT)
                 .getEntry(Identifier.of(AEFabric.MOD_ID, name))
-                .map(entry -> EnchantmentHelper.getLevel(entry, stack))
+                .map(entry -> Math.min(5, EnchantmentHelper.getLevel(entry, stack)))
                 .orElse(0);
     }
 
-    /** Tur (type) ichida berilgan soʻz bormi (masalan, "ATTACK" -> ATTACK;ATTACK_MOB). */
     private static boolean hasType(Ench ench, String keyword) {
         return ench.type().contains(keyword);
     }
@@ -170,7 +169,7 @@ public final class AEEngine {
             return;
         }
 
-        // Nishon (kim ta'sirlanadi): @Victim, @Attacker, boshqalari holder.
+        // Nishon: @Victim, @Attacker, boshqalari holder.
         LivingEntity target = holder;
         if (s.contains("@Victim") || s.contains("%victim%")) {
             target = holderIsAttacker ? other : holder;
@@ -180,6 +179,10 @@ public final class AEEngine {
         if (target == null) {
             return;
         }
+
+        // Zarba hodisasidagi ikki tomon.
+        LivingEntity hitTarget = holderIsAttacker ? other : holder;   // zarba olgan
+        LivingEntity defender = holderIsAttacker ? other : holder;    // himoyalanayotgan
 
         String[] parts = tokens[0].split(":");
         switch (parts[0]) {
@@ -223,6 +226,21 @@ public final class AEEngine {
                 double strength = parts.length > 1 ? parseFloatSafe(parts[1], 1f) * 0.4 : 0.4;
                 target.takeKnockback(strength, target.getX() - holder.getX(), target.getZ() - holder.getZ());
             }
+            case "DECREASE_DAMAGE", "NEGATE_DAMAGE" -> {
+                // Zarar bo'lib o'tgan, endi uning bir qismini qaytaramiz (sog'ayish).
+                float pct = parts.length > 1 ? parseFloatSafe(parts[1], 15f) : 15f;
+                defender.heal(currentDamage * pct / 100f);
+            }
+            case "HALF_DAMAGE" -> defender.heal(currentDamage * 0.5f);
+            case "DOUBLE_DAMAGE" -> {
+                // Zarar yana bir marta beriladi.
+                damageSafe(hitTarget, hitTarget.getDamageSources().magic(), currentDamage);
+            }
+            case "INCREASE_DAMAGE" -> {
+                // Hujumchi qurolidagi enchant: qoʻshimcha zarar qurbonga.
+                float pct = parts.length > 1 ? parseFloatSafe(parts[1], 10f) : 10f;
+                damageSafe(hitTarget, hitTarget.getDamageSources().magic(), currentDamage * pct / 100f);
+            }
             default -> {
                 // Hali qoʻllab-quvvatlanmaydi.
             }
@@ -251,15 +269,12 @@ public final class AEEngine {
     }
 
     private static void damageSafe(LivingEntity target, DamageSource source, float amount) {
-        if (busy) {
+        // Bu yerda busy tekshirilmaydi: zarar hodisasi ichida ham ishlashi kerak.
+        // Qayta-qayta chaqirilishi onHit ichidagi busy bayrogʻi bilan bloklanadi.
+        if (amount <= 0f) {
             return;
         }
-        busy = true;
-        try {
-            target.damage(source, amount);
-        } finally {
-            busy = false;
-        }
+        target.damage(source, amount);
     }
 
     /** Ta'sir zarrachalari: foydali effekt uchun baxtli zarrachalar, zararli uchun tutun. */
@@ -272,15 +287,15 @@ public final class AEEngine {
         }
     }
 
-    private static void onHit(LivingEntity victim, net.minecraft.entity.damage.DamageSource source) {
+    private static void onHit(LivingEntity victim, DamageSource source, float damageTaken) {
         if (busy) {
             return;
         }
         busy = true;
+        currentDamage = damageTaken;
         try {
             LivingEntity attacker = source.getAttacker() instanceof LivingEntity la && la != victim ? la : null;
 
-            // Hujum (ATTACK): hujumchining qurolidagi enchantlar.
             if (attacker != null) {
                 ItemStack weapon = attacker.getMainHandStack();
                 for (Ench ench : ENCHANTS) {
@@ -293,7 +308,6 @@ public final class AEEngine {
                 }
             }
 
-            // Mudofaa (DEFENSE): qurbon kiygan zirhdagi enchantlar.
             for (EquipmentSlot slot : ARMOR) {
                 ItemStack piece = victim.getEquippedStack(slot);
                 if (piece.isEmpty()) {
@@ -309,7 +323,6 @@ public final class AEEngine {
                 }
             }
 
-            // Otish (SHOOT): oʻq yoki trident bilan urish.
             if (source.getSource() instanceof ProjectileEntity projectile
                     && projectile.getOwner() instanceof LivingEntity shooter && shooter != victim) {
                 ItemStack bow = shooter.getMainHandStack();
@@ -327,7 +340,35 @@ public final class AEEngine {
         }
     }
 
-    private static void onKill(LivingEntity victim, DamageSource source) {
+    /** CANCEL_EVENT: himoya enchant zararni butunlay bekor qiladi. */
+    private static boolean cancelsDamage(LivingEntity victim) {
+        for (EquipmentSlot slot : ARMOR) {
+            ItemStack piece = victim.getEquippedStack(slot);
+            if (piece.isEmpty()) {
+                continue;
+            }
+            for (Ench ench : ENCHANTS) {
+                if (!hasType(ench, "DEFENSE")) {
+                    continue;
+                }
+                int lvl = levelOf(victim, ench.name(), piece);
+                if (lvl <= 0) {
+                    continue;
+                }
+                Lvl def = ench.levels().get(lvl);
+                if (def == null) {
+                    continue;
+                }
+                boolean cancels = def.effects().stream().anyMatch(e -> e.startsWith("CANCEL_EVENT"));
+                if (cancels && victim.getRandom().nextInt(100) < def.chance()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static void onKill(LivingEntity victim, net.minecraft.entity.damage.DamageSource source) {
         if (busy || !(source.getAttacker() instanceof LivingEntity attacker) || attacker == victim) {
             return;
         }
@@ -380,8 +421,9 @@ public final class AEEngine {
 
     public static void register() {
         load();
+        ServerLivingEntityEvents.ALLOW_DAMAGE.register((victim, source, amount) -> !cancelsDamage(victim));
         ServerLivingEntityEvents.AFTER_DAMAGE.register((victim, source, baseDamage, damageTaken, blocked) ->
-                onHit(victim, source));
+                onHit(victim, source, damageTaken));
         ServerLivingEntityEvents.AFTER_DEATH.register((victim, source) -> onKill(victim, source));
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if (server.getTicks() % 10 != 0) {
