@@ -1,0 +1,8108 @@
+{
+ "planter": {
+  "display": "Planter",
+  "type": "RIGHT_CLICK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_HOE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 3,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 2,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1"
+    ]
+   }
+  }
+ },
+ "potatoplanter": {
+  "display": "Potato Planter",
+  "type": "RIGHT_CLICK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_HOE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 3,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1:POTATO"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 2,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1:POTATO"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1:POTATO"
+    ]
+   }
+  }
+ },
+ "carrotplanter": {
+  "display": "Carrot Planter",
+  "type": "RIGHT_CLICK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_HOE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 3,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1:CARROT"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 2,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:1:CARROT"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%player is sneaking% = true : %allow%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:2:CARROT"
+    ]
+   }
+  }
+ },
+ "replanter": {
+  "display": "Replanter",
+  "type": "MINING",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_HOE"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%is crop% = false : %stop%",
+     "%is fully grown% = false : %stop%"
+    ],
+    "effects": [
+     "PLANT_SEEDS:0:%block drop type%"
+    ]
+   }
+  }
+ },
+ "strike": {
+  "display": "Strike",
+  "type": "ATTACK;ATTACK_MOB;SHOOT;SHOOT_MOB",
+  "group": "SIMPLE",
+  "applies": [
+   "TRIDENT",
+   "BOW",
+   "CROSSBOW",
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 24,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim"
+    ]
+   },
+   "2": {
+    "chance": 32,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim"
+    ]
+   },
+   "3": {
+    "chance": 40,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim"
+    ]
+   }
+  }
+ },
+ "impact": {
+  "display": "Impact",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ELITE",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "DOUBLE_DAMAGE @Victim"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "DOUBLE_DAMAGE @Victim"
+    ]
+   },
+   "3": {
+    "chance": 11,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "DOUBLE_DAMAGE @Victim"
+    ]
+   },
+   "4": {
+    "chance": 14,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "DOUBLE_DAMAGE @Victim"
+    ]
+   }
+  }
+ },
+ "twinge": {
+  "display": "Twinge",
+  "type": "ATTACK",
+  "group": "LEGENDARY",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "MESSAGE:§4You're bleeding! @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "MESSAGE:§4You're bleeding! @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 11,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "MESSAGE:§4You're bleeding! @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 14,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "MESSAGE:§4You're bleeding! @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "jellylegs": {
+  "display": "Jelly Legs",
+  "type": "FALL_DAMAGE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "2": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   }
+  }
+ },
+ "wings": {
+  "display": "Wings",
+  "type": "EFFECT_STATIC",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "FLY"
+    ]
+   }
+  }
+ },
+ "aquatic": {
+  "display": "Aquatic",
+  "type": "EFFECT_STATIC",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_HELMET"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:WATER_BREATHING:0"
+    ]
+   }
+  }
+ },
+ "smelting": {
+  "display": "Smelting",
+  "type": "MINING",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_PICKAXE",
+   "ALL_SHOVEL"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 33,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "SMELT"
+    ]
+   },
+   "2": {
+    "chance": 66,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "SMELT"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "SMELT"
+    ]
+   }
+  }
+ },
+ "experience": {
+  "display": "Experience",
+  "type": "MINING",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_PICKAXE",
+   "ALL_SPADE",
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 1,
+    "conditions": [
+     "%block type% contains ORE : %allow%"
+    ],
+    "effects": [
+     "EXP:<random number>2-5</random number> @Block"
+    ]
+   },
+   "2": {
+    "chance": 30,
+    "cooldown": 2,
+    "conditions": [
+     "%block type% contains ORE : %allow%"
+    ],
+    "effects": [
+     "EXP:<random number>2-5</random number>"
+    ]
+   },
+   "3": {
+    "chance": 45,
+    "cooldown": 3,
+    "conditions": [
+     "%block type% contains ORE : %allow%"
+    ],
+    "effects": [
+     "EXP:<random number>2-5</random number> @Block"
+    ]
+   },
+   "4": {
+    "chance": 60,
+    "cooldown": 4,
+    "conditions": [
+     "%block type% contains ORE : %allow%"
+    ],
+    "effects": [
+     "EXP:<random number>2-5</random number> @Block"
+    ]
+   },
+   "5": {
+    "chance": 75,
+    "cooldown": 5,
+    "conditions": [
+     "%block type% contains ORE : %allow%"
+    ],
+    "effects": [
+     "EXP:<random number>2-5</random number> @Block"
+    ]
+   }
+  }
+ },
+ "hasten": {
+  "display": "Hasten",
+  "type": "MINING",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_PICKAXE",
+   "ALL_SPADE",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:0:40"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:1:60"
+    ]
+   },
+   "3": {
+    "chance": 45,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:2:80"
+    ]
+   }
+  }
+ },
+ "haste": {
+  "display": "Haste",
+  "type": "HELD",
+  "group": "FABLED",
+  "applies": [
+   "ALL_PICKAXE",
+   "ALL_SPADE",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:0"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:1"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:2"
+    ]
+   }
+  }
+ },
+ "rebreather": {
+  "display": "Rebreather",
+  "type": "MINING",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_PICKAXE"
+  ],
+  "maxLevel": 2,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "AIR"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "AIR"
+    ]
+   }
+  }
+ },
+ "glowing": {
+  "display": "Glowing",
+  "type": "EFFECT_STATIC",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_HELMET"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:NIGHT_VISION:0"
+    ]
+   }
+  }
+ },
+ "decapitation": {
+  "display": "Decapitation",
+  "type": "KILL_PLAYER",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "DROP_HEAD @Victim"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "DROP_HEAD @Victim"
+    ]
+   },
+   "3": {
+    "chance": 15,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "DROP_HEAD @Victim"
+    ]
+   }
+  }
+ },
+ "forcefield": {
+  "display": "Forcefield",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:1.0 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 36,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:1.5 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 42,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:2.0 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 48,
+    "cooldown": 13,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:2.5 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 54,
+    "cooldown": 13,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:3.0 @Victim"
+    ]
+   }
+  }
+ },
+ "epicness": {
+  "display": "Epicness",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SMOKE_LARGE:50:1 @Victim",
+     "PLAY_SOUND:ENTITY_GHAST_SCREAM"
+    ]
+   },
+   "2": {
+    "chance": 40,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SMOKE_LARGE:50:1 @Victim",
+     "PLAY_SOUND:ENTITY_GHAST_SCREAM"
+    ]
+   },
+   "3": {
+    "chance": 60,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SMOKE_LARGE:50:1 @Victim",
+     "PLAY_SOUND:ENTITY_GHAST_SCREAM"
+    ]
+   }
+  }
+ },
+ "famine": {
+  "display": "Famine",
+  "type": "ATTACK",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:HUNGER:0:80 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:HUNGER:0:120 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 18,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:HUNGER:1:80 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 22,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:HUNGER:1:120 @Victim"
+    ]
+   }
+  }
+ },
+ "berserk": {
+  "display": "Berserk",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 4,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:0:60 @Attacker",
+     "POTION:INCREASE_DAMAGE:0:60 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:0:80 @Attacker",
+     "POTION:INCREASE_DAMAGE:0:80 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:0:100 @Attacker",
+     "POTION:INCREASE_DAMAGE:0:100 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 16,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:1:80 @Attacker",
+     "POTION:INCREASE_DAMAGE:1:80 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 20,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:1:100 @Attacker",
+     "POTION:INCREASE_DAMAGE:1:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "reflect": {
+  "display": "Reflect",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 3,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "DO_HARM:%damage% @Attacker",
+     "CACTUS @Victim"
+    ]
+   },
+   "2": {
+    "chance": 4,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "DO_HARM:%damage% @Attacker",
+     "CACTUS @Victim"
+    ]
+   },
+   "3": {
+    "chance": 5,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "DO_HARM:%damage% @Attacker",
+     "CACTUS @Victim"
+    ]
+   },
+   "4": {
+    "chance": 6,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "DO_HARM:%damage% @Attacker",
+     "CACTUS @Victim"
+    ]
+   },
+   "5": {
+    "chance": 7,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "DO_HARM:%damage% @Attacker",
+     "CACTUS @Victim"
+    ]
+   }
+  }
+ },
+ "ward": {
+  "display": "Ward",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 3,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "2": {
+    "chance": 7,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "3": {
+    "chance": 11,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "4": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   }
+  }
+ },
+ "explosive": {
+  "display": "Explosive",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "BOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "2": {
+    "chance": 30,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "3": {
+    "chance": 40,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "4": {
+    "chance": 50,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "5": {
+    "chance": 60,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   }
+  }
+ },
+ "frenzy": {
+  "display": "Frenzy",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "CROSSBOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "2": {
+    "chance": 30,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "3": {
+    "chance": 40,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "4": {
+    "chance": 50,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   },
+   "5": {
+    "chance": 60,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "TNT @Victim"
+    ]
+   }
+  }
+ },
+ "featherweight": {
+  "display": "Featherweight",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 35,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:0:60"
+    ]
+   },
+   "2": {
+    "chance": 55,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:1:80"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:FAST_DIGGING:2:100"
+    ]
+   }
+  }
+ },
+ "molten": {
+  "display": "Molten",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 21,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "BURN:2 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 32,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "BURN:4 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 49,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "BURN:6 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 63,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "BURN:8 @Attacker"
+    ]
+   }
+  }
+ },
+ "ravenous": {
+  "display": "Ravenous",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 14,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:<random number>1-4</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 18,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:<random number>1-4</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 22,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:<random number>1-4</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 26,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:<random number>1-4</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "veinminer": {
+  "display": "Vein Miner",
+  "type": "MINING",
+  "group": "ELITE",
+  "applies": [
+   "ALL_PICKAXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Veinmine"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Veinmine"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Veinmine"
+    ]
+   }
+  }
+ },
+ "telepathy": {
+  "display": "Telepathy",
+  "type": "MINING",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_TOOLS"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "TP_DROPS @Block"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "TP_DROPS @Block"
+    ]
+   },
+   "3": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "TP_DROPS @Block"
+    ]
+   },
+   "4": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "TP_DROPS @Block"
+    ]
+   }
+  }
+ },
+ "explosivedemise": {
+  "display": "Explosive Demise",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_LEGGINGS"
+  ],
+  "maxLevel": 8,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:1:@Victim",
+     "POTION:BLINDNESS:0:40 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 17,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:1:@Victim",
+     "POTION:BLINDNESS:0:60 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 24,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 7 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:1:@Victim",
+     "POTION:BLINDNESS:0:100 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 30,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 7 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:1:@Victim",
+     "POTION:BLINDNESS:1:40 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 38,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 8 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:2:@Victim",
+     "POTION:BLINDNESS:1:80 @Attacker"
+    ]
+   },
+   "6": {
+    "chance": 46,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 8 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:2:@Victim",
+     "POTION:BLINDNESS:1:120 @Attacker"
+    ]
+   },
+   "7": {
+    "chance": 55,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 8 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:2:@Victim",
+     "POTION:BLINDNESS:2:60 @Attacker"
+    ]
+   },
+   "8": {
+    "chance": 69,
+    "cooldown": 3,
+    "conditions": [
+     "%victim health% > 8 : %stop%"
+    ],
+    "effects": [
+     "GUARD:CREEPER:8:3:@Victim",
+     "POTION:BLINDNESS:2:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "enderslayer": {
+  "display": "Ender Slayer",
+  "type": "ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 16,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ENDERMAN or %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 21,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ENDERMAN or %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 29,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ENDERMAN or %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 34,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ENDERMAN or %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 41,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ENDERMAN or %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "deathpunch": {
+  "display": "Death Punch",
+  "type": "ATTACK_MOB",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 16,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ZOMBIE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ZOMBIE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 40,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = ZOMBIE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 60,
+    "cooldown": 1,
+    "conditions": [
+     "%mob type% = ZOMBIE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": [
+     "%mob type% = ZOMBIE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "bonecrusher": {
+  "display": "Bone Crusher",
+  "type": "ATTACK_MOB",
+  "group": "SIMPLE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = SKELETON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = SKELETON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 1,
+    "conditions": [
+     "%mob type% = SKELETON : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "immolate": {
+  "display": "Immolate",
+  "type": "ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = SPIDER : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = SPIDER : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%mob type% = SPIDER : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "slayer": {
+  "display": "Slayer",
+  "type": "ATTACK_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "hunter": {
+  "display": "Hunter",
+  "type": "SHOOT_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "TRIDENT",
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = false : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "beastslayer": {
+  "display": "Beastslayer",
+  "type": "ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "hook": {
+  "display": "Hook",
+  "type": "CATCH_FISH",
+  "group": "ELITE",
+  "applies": [
+   "FISHING_ROD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "EXP:%exp%"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "EXP:%exp%"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "EXP:%exp%"
+    ]
+   }
+  }
+ },
+ "bait": {
+  "display": "Bait",
+  "type": "CATCH_FISH",
+  "group": "LEGENDARY",
+  "applies": [
+   "FISHING_ROD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   },
+   "2": {
+    "chance": 18,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   },
+   "3": {
+    "chance": 26,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   }
+  }
+ },
+ "snap": {
+  "display": "Snap",
+  "type": "CATCH_FISH",
+  "group": "ELITE",
+  "applies": [
+   "FISHING_ROD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 4,
+    "conditions": [
+     "%caught% = PLAYER : %allow%"
+    ],
+    "effects": [
+     "PULL_CLOSER:1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 6,
+    "conditions": [
+     "%caught% = PLAYER : %allow%"
+    ],
+    "effects": [
+     "PULL_CLOSER:1.5 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%caught% = PLAYER : %allow%"
+    ],
+    "effects": [
+     "PULL_CLOSER:2 @Victim"
+    ]
+   }
+  }
+ },
+ "lucky": {
+  "display": "Lucky",
+  "type": "RIGHT_CLICK",
+  "group": "ULTIMATE",
+  "applies": [
+   "FISHING_ROD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 75,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "POTION:LUCK:1:1000"
+    ]
+   },
+   "2": {
+    "chance": 85,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "POTION:LUCK:2:1000"
+    ]
+   },
+   "3": {
+    "chance": 95,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "POTION:LUCK:3:1000"
+    ]
+   }
+  }
+ },
+ "permafrost": {
+  "display": "Permafrost",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:1 @Victim",
+     "BLOOD @Victim",
+     "POTION:SLOW:0:20 @Victim",
+     "WAIT:20",
+     "DO_HARM:1 @Victim",
+     "BLOOD @Victim",
+     "WAIT:20",
+     "DO_HARM:1 @Victim",
+     "BLOOD @Victim"
+    ]
+   },
+   "2": {
+    "chance": 18,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:2 @Victim",
+     "BLOOD @Victim",
+     "POTION:SLOW:0:40 @Victim",
+     "WAIT:20",
+     "DO_HARM:2 @Victim",
+     "BLOOD @Victim",
+     "WAIT:20",
+     "DO_HARM:1 @Victim",
+     "BLOOD @Victim"
+    ]
+   },
+   "3": {
+    "chance": 19,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:3 @Victim",
+     "BLOOD @Victim",
+     "POTION:SLOW:0:50 @Victim",
+     "WAIT:20",
+     "DO_HARM:2 @Victim",
+     "BLOOD @Victim",
+     "WAIT:20",
+     "DO_HARM:1 @Victim",
+     "BLOOD @Victim"
+    ]
+   },
+   "4": {
+    "chance": 21,
+    "cooldown": 13,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:3 @Victim",
+     "BLOOD @Victim",
+     "POTION:SLOW:0:60 @Victim",
+     "WAIT:20",
+     "DO_HARM:2 @Victim",
+     "BLOOD @Victim",
+     "WAIT:20",
+     "DO_HARM:2 @Victim",
+     "BLOOD @Victim"
+    ]
+   },
+   "5": {
+    "chance": 25,
+    "cooldown": 13,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:3 @Victim",
+     "BLOOD @Victim",
+     "POTION:SLOW:1:60 @Victim",
+     "WAIT:20",
+     "DO_HARM:3 @Victim",
+     "BLOOD @Victim",
+     "WAIT:20",
+     "DO_HARM:2 @Victim",
+     "BLOOD @Victim"
+    ]
+   }
+  }
+ },
+ "soulless": {
+  "display": "Soulless",
+  "type": "SHOOT_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "TRIDENT",
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%is hostile% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "reaper": {
+  "display": "Reaper",
+  "type": "ATTACK",
+  "group": "ELITE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 16,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:35 @Victim",
+     "POTION:BLINDNESS:0:35 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 14,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:40 @Victim",
+     "POTION:BLINDNESS:0:40 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:50 @Victim",
+     "POTION:BLINDNESS:0:50 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 14,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:60 @Victim",
+     "POTION:BLINDNESS:0:60 @Victim"
+    ]
+   }
+  }
+ },
+ "netherslayer": {
+  "display": "Nether Slayer",
+  "type": "ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 16,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = BLAZE or %mob type% = ZOMBIE_PIGMAN or %mob type% = PIG_ZOMBIE or %mob type% = GHAST : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 21,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = BLAZE or %mob type% = ZOMBIE_PIGMAN or %mob type% = PIG_ZOMBIE or %mob type% = GHAST : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 29,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = BLAZE or %mob type% = ZOMBIE_PIGMAN or %mob type% = PIG_ZOMBIE or %mob type% = GHAST : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 34,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = BLAZE or %mob type% = ZOMBIE_PIGMAN or %mob type% = PIG_ZOMBIE or %mob type% = GHAST : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 41,
+    "cooldown": 2,
+    "conditions": [
+     "%mob type% = BLAZE or %mob type% = ZOMBIE_PIGMAN or %mob type% = PIG_ZOMBIE or %mob type% = GHAST : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>10-40</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "blind": {
+  "display": "Blind",
+  "type": "ATTACK",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 17,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:BLINDNESS:0:60 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:BLINDNESS:1:80 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 33,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:BLINDNESS:2:100 @Victim"
+    ]
+   }
+  }
+ },
+ "allure": {
+  "display": "Allure",
+  "type": "ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "PULL_CLOSER:1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "PULL_CLOSER:1.5 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "PULL_CLOSER:2 @Victim"
+    ]
+   }
+  }
+ },
+ "frozen": {
+  "display": "Frozen",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 19,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:40 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 19,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:1:50 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 26,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:2:60 @Attacker"
+    ]
+   }
+  }
+ },
+ "paralyze": {
+  "display": "Paralyze",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 7,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim",
+     "EXTINGUISH @Victim",
+     "POTION:SLOW:0:60 @Victim",
+     "POTION:SLOW_DIGGING:0:60 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim",
+     "EXTINGUISH @Victim",
+     "POTION:SLOW:0:100 @Victim",
+     "POTION:SLOW_DIGGING:0:100 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim",
+     "EXTINGUISH @Victim",
+     "POTION:SLOW:1:60 @Victim",
+     "POTION:SLOW_DIGGING:1:60 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 16,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Victim",
+     "EXTINGUISH @Victim",
+     "POTION:SLOW:1:100 @Victim",
+     "POTION:SLOW_DIGGING:1:100 @Victim"
+    ]
+   }
+  }
+ },
+ "poison": {
+  "display": "Poison",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 6,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:80 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 22,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:120 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:1:80 @Victim"
+    ]
+   }
+  }
+ },
+ "virus": {
+  "display": "Virus",
+  "type": "SHOOT_MOB;SHOOT",
+  "group": "UNIQUE",
+  "applies": [
+   "TRIDENT",
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 6,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:80 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 22,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:120 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:1:80 @Victim"
+    ]
+   }
+  }
+ },
+ "poisoned": {
+  "display": "Poisoned",
+  "type": "DEFENSE;DEFENSE_MOB;DEFENSE_PROJECTILE",
+  "group": "ELITE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:60 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 12,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:120 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 17,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:1:60 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 23,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:1:120 @Attacker"
+    ]
+   }
+  }
+ },
+ "reforged": {
+  "display": "Reforged",
+  "type": "ATTACK_MOB;MINING",
+  "group": "ELITE",
+  "applies": [
+   "ALL_AXE",
+   "ALL_SWORD",
+   "ALL_PICKAXE",
+   "ALL_SPADE"
+  ],
+  "maxLevel": 10,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "3": {
+    "chance": 30,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "4": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "5": {
+    "chance": 50,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "6": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "7": {
+    "chance": 70,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "8": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "9": {
+    "chance": 90,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   },
+   "10": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_ITEM:-1"
+    ]
+   }
+  }
+ },
+ "snare": {
+  "display": "Snare",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ELITE",
+  "applies": [
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:80 @Victim",
+     "POTION:SLOW_DIGGING:0:80 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 19,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:120 @Victim",
+     "POTION:SLOW_DIGGING:0:120 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 24,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:1:80 @Victim",
+     "POTION:SLOW_DIGGING:1:80 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 29,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:1:120 @Victim",
+     "POTION:SLOW_DIGGING:1:120 @Victim"
+    ]
+   }
+  }
+ },
+ "springs": {
+  "display": "Springs",
+  "type": "EFFECT_STATIC",
+  "group": "ELITE",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:JUMP:0"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:JUMP:1"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:JUMP:2"
+    ]
+   }
+  }
+ },
+ "undeadruse": {
+  "display": "Undead Ruse",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 10,
+  "levels": {
+   "1": {
+    "chance": 3,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:2:@Victim"
+    ]
+   },
+   "2": {
+    "chance": 4,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:2:@Victim"
+    ]
+   },
+   "3": {
+    "chance": 5,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:2:@Victim"
+    ]
+   },
+   "4": {
+    "chance": 6,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:2:@Victim"
+    ]
+   },
+   "5": {
+    "chance": 7,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:2:@Victim"
+    ]
+   },
+   "6": {
+    "chance": 8,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:3:@Victim"
+    ]
+   },
+   "7": {
+    "chance": 10,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:3:@Victim"
+    ]
+   },
+   "8": {
+    "chance": 14,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:4:@Victim"
+    ]
+   },
+   "9": {
+    "chance": 18,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:4:@Victim"
+    ]
+   },
+   "10": {
+    "chance": 22,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "GUARD:ZOMBIE:8:5:@Victim"
+    ]
+   }
+  }
+ },
+ "voodoo": {
+  "display": "Voodoo",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 6,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:WEAKNESS:0:60 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 7,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:WEAKNESS:0:100 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 9,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:WEAKNESS:0:140 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 13,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:WEAKNESS:0:60 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 16,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:WEAKNESS:0:100 @Attacker"
+    ]
+   },
+   "6": {
+    "chance": 21,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:WEAKNESS:0:120 @Attacker"
+    ]
+   }
+  }
+ },
+ "wither": {
+  "display": "Wither",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 9,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:60 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 11,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:100 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 14,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:140 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 17,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 21,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "perish": {
+  "display": "Perish",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "TRIDENT",
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 9,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:60 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 11,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:100 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 14,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:140 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 17,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 21,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:100 @Victim"
+    ]
+   }
+  }
+ },
+ "smokebomb": {
+  "display": "Smoke Bomb",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_HELMET"
+  ],
+  "maxLevel": 8,
+  "levels": {
+   "1": {
+    "chance": 9,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 4 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:0:60 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 4 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:0:60 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 23,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 4 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:0:100 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 28,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:0:100 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 30,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:1:60 @Attacker"
+    ]
+   },
+   "6": {
+    "chance": 34,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:1:100 @Attacker"
+    ]
+   },
+   "7": {
+    "chance": 36,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:1:140 @Attacker"
+    ]
+   },
+   "8": {
+    "chance": 38,
+    "cooldown": 2,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "PARTICLE:CLOUD:200:3 @Victim",
+     "POTION:BLINDNESS:2:120 @Attacker"
+    ]
+   }
+  }
+ },
+ "infernal": {
+  "display": "Infernal",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:BURN:2:20",
+     "BURN:2 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 30,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:BURN:2:40",
+     "BURN:4 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 50,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:BURN:3:20",
+     "BURN:6 @Victim"
+    ]
+   }
+  }
+ },
+ "extinguish": {
+  "display": "Extinguish",
+  "type": "DEFENSE;DEFENSE_MOB;FIRE",
+  "group": "ELITE",
+  "applies": [
+   "ALL_LEGGINGS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "WAIT:1",
+     "EXTINGUISH @Victim"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "WAIT:1",
+     "EXTINGUISH @Victim"
+    ]
+   },
+   "3": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "WAIT:1",
+     "EXTINGUISH @Victim"
+    ]
+   }
+  }
+ },
+ "shockwave": {
+  "display": "Shockwave",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_CHESTPLATE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 4,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PULL_AWAY:0.5 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 4,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PULL_AWAY:1.0 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 30,
+    "cooldown": 4,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PULL_AWAY:1.5 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 40,
+    "cooldown": 4,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PULL_AWAY:2.0 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 50,
+    "cooldown": 4,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "PULL_AWAY:2.5 @Attacker"
+    ]
+   }
+  }
+ },
+ "vampire": {
+  "display": "Vampire",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 7,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "WAIT:40",
+     "ADD_HEALTH:<random number>1-6</random number>"
+    ]
+   },
+   "2": {
+    "chance": 12,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "WAIT:40",
+     "ADD_HEALTH:<random number>1-6</random number>"
+    ]
+   },
+   "3": {
+    "chance": 15,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "WAIT:40",
+     "ADD_HEALTH:<random number>1-6</random number>"
+    ]
+   }
+  }
+ },
+ "greatsword": {
+  "display": "Greatsword",
+  "type": "ATTACK",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>45-70</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>75-90</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>85-165</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 45,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>105-205</random number>"
+    ]
+   },
+   "5": {
+    "chance": 55,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>105-205</random number>"
+    ]
+   }
+  }
+ },
+ "bowmaster": {
+  "display": "Bowmaster",
+  "type": "SHOOT",
+  "group": "ELITE",
+  "applies": [
+   "TRIDENT",
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>45-70</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>75-90</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>85-165</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 45,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>105-205</random number>"
+    ]
+   },
+   "5": {
+    "chance": 55,
+    "cooldown": 2,
+    "conditions": [
+     "%victim is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>105-205</random number>"
+    ]
+   }
+  }
+ },
+ "hardened": {
+  "display": "Hardened",
+  "type": "DEFENSE",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-1 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 45,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-2 @Victim"
+    ]
+   }
+  }
+ },
+ "patch": {
+  "display": "Patch",
+  "type": "DEFENSE_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-1 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 45,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-2 @Victim"
+    ]
+   }
+  }
+ },
+ "rocketescape": {
+  "display": "Rocket Escape",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 8,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "BOOST:UP:20 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 34,
+    "cooldown": 8,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "BOOST:UP:25 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 40,
+    "cooldown": 8,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "BOOST:UP:30 @Victim"
+    ]
+   }
+  }
+ },
+ "trickster": {
+  "display": "Trickster",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 8,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "2": {
+    "chance": 14,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "3": {
+    "chance": 17,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "4": {
+    "chance": 21,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "5": {
+    "chance": 29,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "6": {
+    "chance": 37,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "7": {
+    "chance": 46,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   },
+   "8": {
+    "chance": 51,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "TELEPORT_BEHIND @Victim"
+    ]
+   }
+  }
+ },
+ "timber": {
+  "display": "Timber",
+  "type": "MINING",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "BREAK_TREE @Block"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "BREAK_TREE @Block"
+    ]
+   },
+   "3": {
+    "chance": 55,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "BREAK_TREE @Block"
+    ]
+   }
+  }
+ },
+ "distance": {
+  "display": "Distance",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 16,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:3.0 @Victim",
+     "POTION:REGENERATION:0:20 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:4.5 @Victim",
+     "POTION:REGENERATION:0:20 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 24,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:5.0 @Victim",
+     "POTION:REGENERATION:1:20 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 28,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:6.5 @Victim",
+     "POTION:REGENERATION:1:40 @Attacker"
+    ]
+   }
+  }
+ },
+ "cleave": {
+  "display": "Cleave",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 7,
+  "levels": {
+   "1": {
+    "chance": 4,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-2</random number> @Aoe{radius=2,target=damageable}"
+    ]
+   },
+   "2": {
+    "chance": 5,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-2</random number> @Aoe{radius=2,target=damageable}"
+    ]
+   },
+   "3": {
+    "chance": 6,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-3</random number> @Aoe{radius=3,target=damageable}"
+    ]
+   },
+   "4": {
+    "chance": 7,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-3</random number> @Aoe{radius=4,target=damageable}"
+    ]
+   },
+   "5": {
+    "chance": 9,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>2-3</random number> @Aoe{radius=5,target=damageable}"
+    ]
+   },
+   "6": {
+    "chance": 12,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>2-3</random number> @Aoe{radius=6,target=damageable}"
+    ]
+   },
+   "7": {
+    "chance": 15,
+    "cooldown": 14,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>2-3</random number> @Aoe{radius=7,target=damageable}"
+    ]
+   }
+  }
+ },
+ "ambit": {
+  "display": "Ambit",
+  "type": "ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 7,
+  "levels": {
+   "1": {
+    "chance": 4,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-2</random number> @Aoe{radius=7,target=mobs}"
+    ]
+   },
+   "2": {
+    "chance": 5,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-2</random number> @Aoe{radius=2,target=mobs}"
+    ]
+   },
+   "3": {
+    "chance": 6,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-3</random number> @Aoe{radius=3,target=mobs}"
+    ]
+   },
+   "4": {
+    "chance": 7,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>1-3</random number> @Aoe{radius=4,target=mobs}"
+    ]
+   },
+   "5": {
+    "chance": 9,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>2-3</random number> @Aoe{radius=5,target=mobs}"
+    ]
+   },
+   "6": {
+    "chance": 12,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>2-3</random number> @Aoe{radius=6,target=mobs}"
+    ]
+   },
+   "7": {
+    "chance": 15,
+    "cooldown": 14,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:<random number>2-3</random number> @Aoe{radius=7,target=mobs}"
+    ]
+   }
+  }
+ },
+ "angelic": {
+  "display": "Angelic",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_CHESTPLATE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 9,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 14,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 17,
+    "cooldown": 11,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 26,
+    "cooldown": 13,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:<random number>1-4</random number> @Victim"
+    ]
+   },
+   "5": {
+    "chance": 34,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:<random number>1-4</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "arrowdeflect": {
+  "display": "Arrow Deflect",
+  "type": "DEFENSE_PROJECTILE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "4": {
+    "chance": 45,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   }
+  }
+ },
+ "arrowbreak": {
+  "display": "Arrow Break",
+  "type": "DEFENSE_PROJECTILE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 6,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_ITEM_BREAK:2 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_ITEM_BREAK:2 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_ITEM_BREAK:2 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 45,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_ITEM_BREAK:2 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 55,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_ITEM_BREAK:2 @Victim"
+    ]
+   },
+   "6": {
+    "chance": 65,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_ITEM_BREAK:2 @Victim"
+    ]
+   }
+  }
+ },
+ "curse": {
+  "display": "Curse",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 2,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:0:100 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 17,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:1:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "diminish": {
+  "display": "Diminish",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:0:100 @Victim"
+    ]
+   }
+  }
+ },
+ "interrupt": {
+  "display": "Interrupt",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 2,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:0:100 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 17,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW_DIGGING:1:100 @Victim"
+    ]
+   }
+  }
+ },
+ "exalted": {
+  "display": "Exalted",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CURE:SLOW @Attacker",
+     "CURE:CONFUSION @Attacker",
+     "CURE:BLINDNESS @Attacker",
+     "CURE:POISON @Attacker",
+     "CURE:WITHER @Attacker",
+     "CURE:HUNGER @Attacker",
+     "CURE:WEAKNESS @Attacker",
+     "CURE:SLOW_DIGGING @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 16,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CURE:SLOW @Attacker",
+     "CURE:CONFUSION @Attacker",
+     "CURE:BLINDNESS @Attacker",
+     "CURE:POISON @Attacker",
+     "CURE:WITHER @Attacker",
+     "CURE:HUNGER @Attacker",
+     "CURE:WEAKNESS @Attacker",
+     "CURE:SLOW_DIGGING @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 22,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CURE:SLOW @Attacker",
+     "CURE:CONFUSION @Attacker",
+     "CURE:BLINDNESS @Attacker",
+     "CURE:POISON @Attacker",
+     "CURE:WITHER @Attacker",
+     "CURE:HUNGER @Attacker",
+     "CURE:WEAKNESS @Attacker",
+     "CURE:SLOW_DIGGING @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 36,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "CURE:SLOW @Attacker",
+     "CURE:CONFUSION @Attacker",
+     "CURE:BLINDNESS @Attacker",
+     "CURE:POISON @Attacker",
+     "CURE:WITHER @Attacker",
+     "CURE:HUNGER @Attacker",
+     "CURE:WEAKNESS @Attacker",
+     "CURE:SLOW_DIGGING @Attacker"
+    ]
+   }
+  }
+ },
+ "ragdoll": {
+  "display": "Ragdoll",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:0.1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:0.2 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 30,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:0.3 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 50,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PULL_AWAY:0.4 @Victim"
+    ]
+   }
+  }
+ },
+ "block": {
+  "display": "Block",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 16,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:50 @Victim",
+     "DO_HARM:<random number>1-4</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 22,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:50 @Victim",
+     "DO_HARM:<random number>1-4</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 30,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:50 @Victim",
+     "DO_HARM:<random number>1-4</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "trench": {
+  "display": "Trench",
+  "type": "MINING",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_PICKAXE",
+   "ALL_SPADE"
+  ],
+  "maxLevel": 9,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "2": {
+    "chance": 26,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "3": {
+    "chance": 36,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "4": {
+    "chance": 49,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "5": {
+    "chance": 59,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "6": {
+    "chance": 72,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "7": {
+    "chance": 85,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "8": {
+    "chance": 90,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   },
+   "9": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "BREAK_BLOCK @Trench{r=3}"
+    ]
+   }
+  }
+ },
+ "dodge": {
+  "display": "Dodge",
+  "type": "DEFENSE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 7,
+    "cooldown": 8,
+    "conditions": [
+     "%victim is sneaking% = true : %chance%+7"
+    ],
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 12,
+    "cooldown": 8,
+    "conditions": [
+     "%victim is sneaking% = true : %chance%+7"
+    ],
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 16,
+    "cooldown": 8,
+    "conditions": [
+     "%victim is sneaking% = true : %chance%+7"
+    ],
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 22,
+    "cooldown": 8,
+    "conditions": [
+     "%victim is sneaking% = true : %chance%+7"
+    ],
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 27,
+    "cooldown": 8,
+    "conditions": [
+     "%victim is sneaking% = true : %chance%+7"
+    ],
+    "effects": [
+     "CANCEL_EVENT",
+     "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 @Victim"
+    ]
+   }
+  }
+ },
+ "fumble": {
+  "display": "Fumble",
+  "type": "DEFENSE_PROJECTILE",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_CHESTPLATE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT:1 @Attacker",
+     "PLAY_SOUND:ENCHANT_THORNS_HIT:1:1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT:1 @Attacker",
+     "PLAY_SOUND:ENCHANT_THORNS_HIT:1:1 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "TNT:1 @Attacker",
+     "PLAY_SOUND:ENCHANT_THORNS_HIT:1:1 @Victim"
+    ]
+   }
+  }
+ },
+ "turmoil": {
+  "display": "Turmoil",
+  "type": "DEFENSE",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DISABLE_ACTIVATION:guardians:4",
+     "DISABLE_ACTIVATION:spirits:4",
+     "DISABLE_ACTIVATION:explosivedemise:4",
+     "DISABLE_ACTIVATION:undeadruse:4"
+    ]
+   },
+   "2": {
+    "chance": 14,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DISABLE_ACTIVATION:guardians:4",
+     "DISABLE_ACTIVATION:spirits:4",
+     "DISABLE_ACTIVATION:explosivedemise:4",
+     "DISABLE_ACTIVATION:undeadruse:4"
+    ]
+   },
+   "3": {
+    "chance": 18,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "DISABLE_ACTIVATION:guardians:4",
+     "DISABLE_ACTIVATION:spirits:4",
+     "DISABLE_ACTIVATION:explosivedemise:4",
+     "DISABLE_ACTIVATION:undeadruse:4"
+    ]
+   }
+  }
+ },
+ "guardians": {
+  "display": "Guardians",
+  "type": "DEFENSE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 10,
+  "levels": {
+   "1": {
+    "chance": 6,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 9,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:1 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 13,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:1 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 14,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:1 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 16,
+    "cooldown": 9,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:1 @Victim"
+    ]
+   },
+   "6": {
+    "chance": 17,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:2 @Victim"
+    ]
+   },
+   "7": {
+    "chance": 18,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:2 @Victim"
+    ]
+   },
+   "8": {
+    "chance": 20,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:3 @Victim"
+    ]
+   },
+   "9": {
+    "chance": 22,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:3 @Victim"
+    ]
+   },
+   "10": {
+    "chance": 24,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "GUARD:IRON_GOLEM:8:4 @Victim"
+    ]
+   }
+  }
+ },
+ "iceaspect": {
+  "display": "Ice Aspect",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:1:100 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 23,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:1:100 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 31,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:1:100 @Victim"
+    ]
+   }
+  }
+ },
+ "momentum": {
+  "display": "Momentum",
+  "type": "RIGHT_CLICK",
+  "group": "ELITE",
+  "applies": [
+   "ELYTRA"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 5,
+    "conditions": [
+     "%player is holding% = FIREWORK_ROCKET : %allow%"
+    ],
+    "effects": [
+     "POTION:SPEED:0:40"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 5,
+    "conditions": [
+     "%player is holding% = FIREWORK_ROCKET : %allow%"
+    ],
+    "effects": [
+     "POTION:SPEED:1:60"
+    ]
+   },
+   "3": {
+    "chance": 45,
+    "cooldown": 5,
+    "conditions": [
+     "%player is holding% = FIREWORK_ROCKET : %allow%"
+    ],
+    "effects": [
+     "POTION:SPEED:2:80"
+    ]
+   }
+  }
+ },
+ "reinforced": {
+  "display": "Reinforced",
+  "type": "DEFENSE;DEFENSE_MOB;DEFENSE_PROJECTILE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ELYTRA"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 1,
+    "conditions": null,
+    "effects": [
+     "DECREASE_DAMAGE:15"
+    ]
+   },
+   "2": {
+    "chance": 45,
+    "cooldown": 1,
+    "conditions": null,
+    "effects": [
+     "DECREASE_DAMAGE:25"
+    ]
+   },
+   "3": {
+    "chance": 60,
+    "cooldown": 1,
+    "conditions": null,
+    "effects": [
+     "DECREASE_DAMAGE:35"
+    ]
+   },
+   "4": {
+    "chance": 75,
+    "cooldown": 1,
+    "conditions": null,
+    "effects": [
+     "DECREASE_DAMAGE:45"
+    ]
+   }
+  }
+ },
+ "restore": {
+  "display": "Restore",
+  "type": "ITEM_BREAK",
+  "group": "FABLED",
+  "applies": [
+   "ALL_PICKAXE",
+   "ALL_SPADE",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>",
+     "REMOVE_ENCHANT:restore",
+     "PLAY_SOUND:ITEM_TOTEM_USE"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>",
+     "REMOVE_ENCHANT:restore",
+     "PLAY_SOUND:ITEM_TOTEM_USE"
+    ]
+   },
+   "3": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>",
+     "REMOVE_ENCHANT:restore",
+     "PLAY_SOUND:ITEM_TOTEM_USE"
+    ]
+   },
+   "4": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>",
+     "REMOVE_ENCHANT:restore",
+     "PLAY_SOUND:ITEM_TOTEM_USE"
+    ]
+   }
+  }
+ },
+ "implants": {
+  "display": "Implants",
+  "type": "REPEATING",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_HELMET"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   },
+   "3": {
+    "chance": 70,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   }
+  }
+ },
+ "obsidianshield": {
+  "display": "Obsidianshield",
+  "type": "EFFECT_STATIC",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:FIRE_RESISTANCE:0"
+    ]
+   }
+  }
+ },
+ "piercing": {
+  "display": "Piercing",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 19,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 32,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "5": {
+    "chance": 37,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "archer": {
+  "display": "Archer",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "BOW"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 19,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 32,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "marksman": {
+  "display": "Marksman",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ELITE",
+  "applies": [
+   "CROSSBOW"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = CROSSBOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 19,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = CROSSBOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = CROSSBOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 32,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% = CROSSBOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "poseidon": {
+  "display": "Poseidon",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ELITE",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": [
+     "%item type% = TRIDENT : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 19,
+    "cooldown": 3,
+    "conditions": [
+     "%item type% = TRIDENT : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": [
+     "%item type% = TRIDENT : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 32,
+    "cooldown": 3,
+    "conditions": [
+     "%item type% = TRIDENT : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-150</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "safeguard": {
+  "display": "Safeguard",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 2,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:DAMAGE_RESISTANCE:0:60 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 9,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "POTION:DAMAGE_RESISTANCE:1:60 @Victim"
+    ]
+   }
+  }
+ },
+ "disappear": {
+  "display": "Disappear",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 20,
+    "conditions": [
+     "%victim health% > 5 : %stop%"
+    ],
+    "effects": [
+     "POTION:INVISIBILITY:2:60 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 23,
+    "cooldown": 20,
+    "conditions": [
+     "%victim health% > 6 : %stop%"
+    ],
+    "effects": [
+     "POTION:INVISIBILITY:2:80 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 26,
+    "cooldown": 20,
+    "conditions": [
+     "%victim health% > 7 : %stop%"
+    ],
+    "effects": [
+     "POTION:INVISIBILITY:2:100 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 30,
+    "cooldown": 20,
+    "conditions": [
+     "%victim health% > 8 : %stop%"
+    ],
+    "effects": [
+     "POTION:INVISIBILITY:2:120 @Victim"
+    ]
+   }
+  }
+ },
+ "confuse": {
+  "display": "Confuse",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "POTION:CONFUSION:0:60 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 14,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "POTION:CONFUSION:1:60 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 16,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:CONFUSION:2:60 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 18,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "POTION:CONFUSION:3:60 @Victim"
+    ]
+   }
+  }
+ },
+ "disintegrate": {
+  "display": "Disintegrate",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 39,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 46,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   }
+  }
+ },
+ "shatter": {
+  "display": "Shatter",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 39,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 46,
+    "cooldown": 2,
+    "conditions": null,
+    "effects": [
+     "DAMAGE_ARMOR:2 @Victim"
+    ]
+   }
+  }
+ },
+ "heavy": {
+  "display": "Heavy",
+  "type": "DEFENSE;DEFENSE_PROJECTILE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 4,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:2 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 9,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:4 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:6 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 16,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:8 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 21,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:10 @Victim"
+    ]
+   }
+  }
+ },
+ "devour": {
+  "display": "Devour",
+  "type": "KILL_MOB",
+  "group": "UNIQUE",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   },
+   "3": {
+    "chance": 20,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   }
+  }
+ },
+ "replenish": {
+  "display": "Replenish",
+  "type": "MINING",
+  "group": "ELITE",
+  "applies": [
+   "ALL_PICKAXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:1"
+    ]
+   },
+   "2": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:2"
+    ]
+   },
+   "3": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_FOOD:3"
+    ]
+   }
+  }
+ },
+ "hellfire": {
+  "display": "Hellfire",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "BOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "4": {
+    "chance": 50,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "5": {
+    "chance": 70,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   }
+  }
+ },
+ "missile": {
+  "display": "Missile",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ELITE",
+  "applies": [
+   "CROSSBOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "4": {
+    "chance": 50,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   },
+   "5": {
+    "chance": 70,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "FIREBALL @Victim"
+    ]
+   }
+  }
+ },
+ "longbow": {
+  "display": "Longbow",
+  "type": "SHOOT",
+  "group": "ULTIMATE",
+  "applies": [
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 4,
+    "conditions": [
+     "%victim is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>25-50</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 17,
+    "cooldown": 4,
+    "conditions": [
+     "%victim is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>25-50</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 4,
+    "conditions": [
+     "%victim is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-100</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 33,
+    "cooldown": 4,
+    "conditions": [
+     "%victim is holding% = BOW : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>50-100</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "tank": {
+  "display": "Tank",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:2 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:4 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:6 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 16,
+    "cooldown": 3,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:8 @Victim"
+    ]
+   }
+  }
+ },
+ "swordsman": {
+  "display": "Swordsman",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 4,
+    "cooldown": 4,
+    "conditions": [
+     "%victim is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:<random number>1-4</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 9,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:<random number>8-12</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 13,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:<random number>12-15</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 16,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:<random number>15-18</random number> @Victim"
+    ]
+   },
+   "5": {
+    "chance": 21,
+    "cooldown": 4,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:<random number>18-22</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "critical": {
+  "display": "Critical",
+  "type": "ATTACK_MOB;ATTACK",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 7,
+    "cooldown": 5,
+    "conditions": [
+     "%is critical% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:10"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 5,
+    "conditions": [
+     "%is critical% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:15"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 5,
+    "conditions": [
+     "%is critical% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:20"
+    ]
+   }
+  }
+ },
+ "rebound": {
+  "display": "Rebound",
+  "type": "KILL_PLAYER;KILL_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_AXE",
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:2 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:4 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 45,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "ADD_HEALTH:6 @Attacker"
+    ]
+   }
+  }
+ },
+ "thunderlord": {
+  "display": "Thunderlord",
+  "type": "ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_AXE",
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 2,
+    "conditions": [
+     "%attacker combo% > 2 : %allow%"
+    ],
+    "effects": [
+     "LIGHTNING @Victim",
+     "RESET_COMBO @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 45,
+    "cooldown": 2,
+    "conditions": [
+     "%attacker combo% > 2 : %allow%"
+    ],
+    "effects": [
+     "LIGHTNING @Victim",
+     "RESET_COMBO @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 2,
+    "conditions": [
+     "%attacker combo% > 2 : %allow%"
+    ],
+    "effects": [
+     "LIGHTNING @Victim",
+     "RESET_COMBO @Attacker"
+    ]
+   }
+  }
+ },
+ "netherling": {
+  "display": "Netherling",
+  "type": "ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 0,
+    "conditions": [
+     "%player world% contains NETHER : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:50"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 0,
+    "conditions": [
+     "%player world% contains NETHER : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:50"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%player world% contains NETHER : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:50"
+    ]
+   }
+  }
+ },
+ "endmaster": {
+  "display": "Endmaster",
+  "type": "ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 0,
+    "conditions": [
+     "%player world% contains _END : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:50"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 0,
+    "conditions": [
+     "%player world% contains _END : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:50"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": [
+     "%player world% contains _END : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:50"
+    ]
+   }
+  }
+ },
+ "creeperarmor": {
+  "display": "Creeper Armor",
+  "type": "EXPLOSION",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "2": {
+    "chance": 50,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "CANCEL_EVENT",
+     "ADD_HEALTH:<random number>1-2</random number>"
+    ]
+   }
+  }
+ },
+ "spirits": {
+  "display": "Spirits",
+  "type": "DEFENSE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 10,
+  "levels": {
+   "1": {
+    "chance": 2,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:3:@Victim"
+    ]
+   },
+   "2": {
+    "chance": 2,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "3": {
+    "chance": 3,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "4": {
+    "chance": 5,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "5": {
+    "chance": 8,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "6": {
+    "chance": 12,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "7": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "8": {
+    "chance": 19,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "9": {
+    "chance": 22,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:4:@Victim"
+    ]
+   },
+   "10": {
+    "chance": 27,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "GUARD:BLAZE:8:5:@Victim"
+    ]
+   }
+  }
+ },
+ "bleed": {
+  "display": "Bleed",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 6,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 23,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 30,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "5": {
+    "chance": 44,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   },
+   "6": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SLOW:0:100 @Victim",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim",
+     "WAIT:20",
+     "DO_HARM:<random number>1-3</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "lavawalker": {
+  "display": "Lava Walker",
+  "type": "EFFECT_STATIC",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "LAVA_WALKER"
+    ]
+   }
+  }
+ },
+ "waterwalker": {
+  "display": "Water Walker",
+  "type": "EFFECT_STATIC",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "WATER_WALKER"
+    ]
+   }
+  }
+ },
+ "aqua": {
+  "display": "Aqua",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 3,
+    "conditions": [
+     "%is under water% = TRUE : %allow%"
+    ],
+    "effects": [
+     "DOUBLE_DAMAGE"
+    ]
+   },
+   "2": {
+    "chance": 13,
+    "cooldown": 3,
+    "conditions": [
+     "%is under water% = TRUE : %allow%"
+    ],
+    "effects": [
+     "DOUBLE_DAMAGE"
+    ]
+   },
+   "3": {
+    "chance": 19,
+    "cooldown": 5,
+    "conditions": [
+     "%is under water% = TRUE : %allow%"
+    ],
+    "effects": [
+     "DOUBLE_DAMAGE"
+    ]
+   },
+   "4": {
+    "chance": 23,
+    "cooldown": 5,
+    "conditions": [
+     "%is under water% = TRUE : %allow%"
+    ],
+    "effects": [
+     "DOUBLE_DAMAGE"
+    ]
+   }
+  }
+ },
+ "judgement": {
+  "display": "Judgement",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ELYTRA"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 6,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:0:100 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:0:100 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 10,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:0:100 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 12,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:1:60 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 16,
+    "cooldown": 25,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:1:100 @Victim"
+    ]
+   }
+  }
+ },
+ "divert": {
+  "display": "Divert",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 6,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:0:100 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:0:100 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 10,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:0:100 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 12,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:1:60 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 16,
+    "cooldown": 25,
+    "conditions": null,
+    "effects": [
+     "POTION:POISON:0:100 @Attacker",
+     "POTION:REGENERATION:1:100 @Victim"
+    ]
+   }
+  }
+ },
+ "unholy": {
+  "display": "Unholy",
+  "type": "DEFENSE",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 2,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:60 @Attacker",
+     "POTION:WEAKNESS:0:100 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 4,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Attacker",
+     "POTION:WEAKNESS:0:5 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 6,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Attacker",
+     "POTION:WEAKNESS:0:100 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 8,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Attacker",
+     "POTION:WEAKNESS:0:100 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 10,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Attacker",
+     "POTION:WEAKNESS:0:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "chaos": {
+  "display": "Chaos",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 2,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:0:60 @Victim",
+     "POTION:WEAKNESS:0:100 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 4,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Victim",
+     "POTION:WEAKNESS:0:5 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 6,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Victim",
+     "POTION:WEAKNESS:0:100 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 8,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Victim",
+     "POTION:WEAKNESS:0:100 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 10,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "POTION:WITHER:1:60 @Victim",
+     "POTION:WEAKNESS:0:100 @Victim"
+    ]
+   }
+  }
+ },
+ "convulse": {
+  "display": "Convulse",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 6,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:5 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:6 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:7 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 14,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:8 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 16,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:9 @Attacker"
+    ]
+   },
+   "6": {
+    "chance": 18,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:10 @Attacker"
+    ]
+   }
+  }
+ },
+ "chunky": {
+  "display": "Chunky",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_CHESTPLATE"
+  ],
+  "maxLevel": 6,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:10 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:20 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:30 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 15,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:40 @Victim"
+    ]
+   },
+   "5": {
+    "chance": 18,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:50 @Victim"
+    ]
+   },
+   "6": {
+    "chance": 20,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "NEGATE_DAMAGE:60 @Victim"
+    ]
+   }
+  }
+ },
+ "barbarian": {
+  "display": "Barbarian",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>25-100</random number> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>25-100</random number> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 19,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>25-100</random number> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 25,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains AXE : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:<random number>25-100</random number> @Victim"
+    ]
+   }
+  }
+ },
+ "lucid": {
+  "display": "Lucid",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 22,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CURE:BLINDNESS @Victim",
+     "POTION:NIGHT_VISION:0:40 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 32,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CURE:BLINDNESS @Victim",
+     "POTION:NIGHT_VISION:0:60 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 42,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "CURE:BLINDNESS @Victim",
+     "POTION:NIGHT_VISION:0:80 @Victim"
+    ]
+   }
+  }
+ },
+ "doublestrike": {
+  "display": "Double Strike",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "WAIT:20",
+     "DO_HARM:%damage% @Victim",
+     "BLOOD @Victim"
+    ]
+   },
+   "2": {
+    "chance": 13,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "WAIT:20",
+     "DO_HARM:%damage% @Victim",
+     "BLOOD @Victim"
+    ]
+   },
+   "3": {
+    "chance": 19,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "WAIT:20",
+     "DO_HARM:%damage% @Victim",
+     "BLOOD @Victim"
+    ]
+   }
+  }
+ },
+ "gears": {
+  "display": "Gears",
+  "type": "EFFECT_STATIC",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SPEED:0"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SPEED:1"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:SPEED:2"
+    ]
+   }
+  }
+ },
+ "inflame": {
+  "display": "Inflame",
+  "type": "ATTACK",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:FALLING_LAVA:5:0 <aoe> radius=2 target=damageable </aoe>",
+     "BURN:40 <aoe> radius=2 target=damageable </aoe>"
+    ]
+   },
+   "2": {
+    "chance": 12,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:FALLING_LAVA:5:0 <aoe> radius=4 target=damageable </aoe>",
+     "BURN:50 <aoe> radius=6 target=damageable </aoe>"
+    ]
+   },
+   "3": {
+    "chance": 16,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:FALLING_LAVA:5:0 <aoe> radius=4 target=damageable </aoe>",
+     "BURN:60 <aoe> radius=4 target=damageable </aoe>"
+    ]
+   }
+  }
+ },
+ "immolation": {
+  "display": "Immolation",
+  "type": "ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 10,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:FALLING_LAVA:5:0 @Aoe{radius=2,target=mobs}",
+     "BURN:40 @Aoe{radius=2,target=mobs}"
+    ]
+   },
+   "2": {
+    "chance": 12,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:FALLING_LAVA:5:0@Aoe{radius=4,target=mobs}",
+     "BURN:50 @Aoe{radius=4,target=mobs}"
+    ]
+   },
+   "3": {
+    "chance": 16,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:FALLING_LAVA:5:0 @Aoe{radius=6,target=mobs}",
+     "BURN:60 @Aoe{radius=6,target=mobs}"
+    ]
+   }
+  }
+ },
+ "killaura": {
+  "display": "Kill Aura",
+  "type": "ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SPELL_MOB:5:0 @Aoe{radius=2,target=mobs}",
+     "KILL:1 @Aoe{radius=2,target=mobs}"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SPELL_MOB:5:0 @Aoe{radius=2,target=mobs}",
+     "KILL:1 @Aoe{radius=2,target=mobs}"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SPELL_MOB:5:0 @Aoe{radius=3,target=mobs}",
+     "KILL:1 @Aoe{radius=3,target=mobs}"
+    ]
+   },
+   "4": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SPELL_MOB:5:0 @Aoe{radius=3,target=mobs}",
+     "KILL:1 @Aoe{radius=3,target=mobs}"
+    ]
+   },
+   "5": {
+    "chance": 18,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "PARTICLE:SPELL_MOB:5:0 @Aoe{radius=4,target=mobs}",
+     "KILL:1 @Aoe{radius=4,target=mobs}"
+    ]
+   }
+  }
+ },
+ "inquisitive": {
+  "display": "Inquisitive",
+  "type": "KILL_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "EXP:<math>%exp% * (1.0 + 0.25 * %level%)</math> @Victim"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "EXP:<math>%exp% * (1.0 + 0.25 * %level%)</math> @Victim"
+    ]
+   },
+   "3": {
+    "chance": 40,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "EXP:<math>%exp% * (1.0 + 0.25 * %level%)</math> @Victim"
+    ]
+   },
+   "4": {
+    "chance": 45,
+    "cooldown": 4,
+    "conditions": null,
+    "effects": [
+     "EXP:<math>%exp% * (1.0 + 0.25 * %level%)</math> @Victim"
+    ]
+   }
+  }
+ },
+ "lifesteal": {
+  "display": "Lifesteal",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 9,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "STEAL_HEALTH:<random number>1-3</random number> @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 13,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "STEAL_HEALTH:<random number>1-3</random number> @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 17,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "STEAL_HEALTH:<random number>1-4</random number> @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 21,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "STEAL_HEALTH:<random number>1-5</random number> @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 25,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "STEAL_HEALTH:<random number>1-5</random number> @Attacker"
+    ]
+   }
+  }
+ },
+ "overload": {
+  "display": "Overload",
+  "type": "EFFECT_STATIC",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:HEALTH_BOOST:0"
+    ]
+   },
+   "2": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:HEALTH_BOOST:1"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "POTION:HEALTH_BOOST:2"
+    ]
+   }
+  }
+ },
+ "armored": {
+  "display": "Armored",
+  "type": "DEFENSE",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 6,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:2 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 12,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:4 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 16,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:6 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 20,
+    "cooldown": 8,
+    "conditions": [
+     "%attacker is holding% contains SWORD : %allow%"
+    ],
+    "effects": [
+     "DECREASE_DAMAGE:8 @Attacker"
+    ]
+   }
+  }
+ },
+ "blacksmith": {
+  "display": "Blacksmith",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 9,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-3",
+     "HALF_DAMAGE",
+     "PARTICLE:BLOCK_DUST:20:1"
+    ]
+   },
+   "2": {
+    "chance": 15,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-3",
+     "HALF_DAMAGE",
+     "PARTICLE:BLOCK_DUST:20:1"
+    ]
+   },
+   "3": {
+    "chance": 23,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-3",
+     "HALF_DAMAGE",
+     "PARTICLE:BLOCK_DUST:20:1"
+    ]
+   },
+   "4": {
+    "chance": 31,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-4",
+     "HALF_DAMAGE",
+     "PARTICLE:BLOCK_DUST:20:1"
+    ]
+   },
+   "5": {
+    "chance": 39,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY_CURRENT_ITEM:-4",
+     "HALF_DAMAGE",
+     "PARTICLE:BLOCK_DUST:20:1"
+    ]
+   }
+  }
+ },
+ "immortal": {
+  "display": "Immortal",
+  "type": "DEFENSE;DEFENSE_MOB",
+  "group": "FABLED",
+  "applies": [
+   "ALL_ARMOR"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 12,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY:-10 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 18,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY:-10 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY:-10 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 31,
+    "cooldown": 40,
+    "conditions": null,
+    "effects": [
+     "ADD_DURABILITY:-10 @Victim"
+    ]
+   }
+  }
+ },
+ "unbreakable": {
+  "display": "Unbreakable",
+  "type": "MINING;ATTACK;ATTACK_MOB",
+  "group": "FABLED",
+  "applies": [
+   "ALL_TOOLS"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "REPAIR"
+    ]
+   }
+  }
+ },
+ "abiding": {
+  "display": "Abiding",
+  "type": "ATTACK;ATTACK_MOB;SHOOT;SHOOT_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD",
+   "BOW"
+  ],
+  "maxLevel": 1,
+  "levels": {
+   "1": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "REPAIR @Attacker"
+    ]
+   }
+  }
+ },
+ "disarmor": {
+  "display": "Disarmor",
+  "type": "ATTACK",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 8,
+  "levels": {
+   "1": {
+    "chance": 0.4,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "2": {
+    "chance": 0.8,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "3": {
+    "chance": 1.0,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "4": {
+    "chance": 1.2,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "5": {
+    "chance": 1.4,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "6": {
+    "chance": 1.6,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "7": {
+    "chance": 1.8,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   },
+   "8": {
+    "chance": 2,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "REMOVE_RANDOM_ARMOR @Victim",
+     "MESSAGE:§6§l** YOU HAVE BEEN DISARMORED ** @Victim"
+    ]
+   }
+  }
+ },
+ "striker": {
+  "display": "Striker",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "BOW"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "SPAWN_ARROWS @Victim"
+    ]
+   },
+   "2": {
+    "chance": 18,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "SPAWN_ARROWS @Victim"
+    ]
+   },
+   "3": {
+    "chance": 22,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "SPAWN_ARROWS @Victim"
+    ]
+   }
+  }
+ },
+ "sniper": {
+  "display": "Sniper",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "BOW"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = false : %stop%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 30,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = false : %stop%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 35,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = false : %stop%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "deadshot": {
+  "display": "Deadshot",
+  "type": "SHOOT;SHOOT_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = false : %stop%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 30,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = false : %stop%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   },
+   "5": {
+    "chance": 35,
+    "cooldown": 5,
+    "conditions": [
+     "%is headshot% = false : %stop%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:100 @Attacker"
+    ]
+   }
+  }
+ },
+ "soulbound": {
+  "display": "Soulbound",
+  "type": "DEATH;PASSIVE_DEATH",
+  "group": "FABLED",
+  "applies": [
+   "ALL_TOOLS",
+   "ALL_SWORD",
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 4,
+    "cooldown": 300,
+    "conditions": null,
+    "effects": [
+     "KEEP_ON_DEATH"
+    ]
+   },
+   "2": {
+    "chance": 6,
+    "cooldown": 300,
+    "conditions": null,
+    "effects": [
+     "KEEP_ON_DEATH"
+    ]
+   },
+   "3": {
+    "chance": 8,
+    "cooldown": 300,
+    "conditions": null,
+    "effects": [
+     "KEEP_ON_DEATH"
+    ]
+   }
+  }
+ },
+ "neutralize": {
+  "display": "Neutralize",
+  "type": "SHOOT",
+  "group": "FABLED",
+  "applies": [
+   "BOW",
+   "CROSSBOW"
+  ],
+  "maxLevel": 2,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "DISARM @Victim"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "DISARM @Victim"
+    ]
+   }
+  }
+ },
+ "disarm": {
+  "display": "Disarm",
+  "type": "ATTACK",
+  "group": "FABLED",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 2,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "DISARM @Victim"
+    ]
+   },
+   "2": {
+    "chance": 4,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "DISARM @Victim"
+    ]
+   },
+   "3": {
+    "chance": 5,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "DISARM @Victim"
+    ]
+   }
+  }
+ },
+ "phoenix": {
+  "display": "Phoenix",
+  "type": "DEATH",
+  "group": "FABLED",
+  "applies": [
+   "ALL_CHESTPLATE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "REVIVE @Victim"
+    ]
+   },
+   "2": {
+    "chance": 7,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "REVIVE @Victim"
+    ]
+   },
+   "3": {
+    "chance": 9,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "REVIVE @Victim"
+    ]
+   }
+  }
+ },
+ "scare": {
+  "display": "Scare",
+  "type": "ATTACK",
+  "group": "FABLED",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 1.8,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "PUMPKIN:40 @Victim",
+     "PLAY_SOUND_OUTLOUD:BLOCK_ANVIL_LAND"
+    ]
+   },
+   "2": {
+    "chance": 3.6,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "PUMPKIN:40 @Victim",
+     "PLAY_SOUND_OUTLOUD:BLOCK_ANVIL_LAND"
+    ]
+   },
+   "3": {
+    "chance": 4.4,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "PUMPKIN:60 @Victim",
+     "PLAY_SOUND_OUTLOUD:BLOCK_ANVIL_LAND"
+    ]
+   },
+   "4": {
+    "chance": 5.2,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "PUMPKIN:60 @Victim",
+     "PLAY_SOUND_OUTLOUD:BLOCK_ANVIL_LAND"
+    ]
+   },
+   "5": {
+    "chance": 6,
+    "cooldown": 20,
+    "conditions": null,
+    "effects": [
+     "PUMPKIN:80 @Victim",
+     "PLAY_SOUND_OUTLOUD:BLOCK_ANVIL_LAND"
+    ]
+   }
+  }
+ },
+ "strife": {
+  "display": "Strife",
+  "type": "ATTACK;ATTACK_MOB",
+  "group": "LEGENDARY",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:15"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:25"
+    ]
+   },
+   "3": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:30"
+    ]
+   }
+  }
+ },
+ "spark": {
+  "display": "Spark",
+  "type": "ATTACK;ATTACK_MOB;SHOOT;SHOOT_MOB",
+  "group": "ELITE",
+  "applies": [
+   "TRIDENT"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 25,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "BURN:40 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 35,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "BURN:40 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 15,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "BURN:40 @Victim"
+    ]
+   }
+  }
+ },
+ "bluntforce": {
+  "display": "Blunt Force",
+  "type": "ATTACK",
+  "group": "ELITE",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:1 @Attacker"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:2 @Attacker"
+    ]
+   },
+   "3": {
+    "chance": 10,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:3 @Attacker"
+    ]
+   },
+   "4": {
+    "chance": 12,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:4 @Attacker"
+    ]
+   }
+  }
+ },
+ "aegis": {
+  "display": "Aegis",
+  "type": "FALL_DAMAGE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SPEED:0:60"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SPEED:1:60"
+    ]
+   },
+   "3": {
+    "chance": 70,
+    "cooldown": 3,
+    "conditions": null,
+    "effects": [
+     "POTION:SPEED:2:60"
+    ]
+   }
+  }
+ },
+ "plummet": {
+  "display": "Plummet",
+  "type": "FALL_DAMAGE",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_BOOTS"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:2 @Aoe{radius=3,target=mobs}"
+    ]
+   },
+   "2": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:3 @Aoe{radius=5,target=mobs}"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "DO_HARM:5 @Aoe{radius=8,target=mobs}"
+    ]
+   }
+  }
+ },
+ "suspend": {
+  "display": "Suspend",
+  "type": "ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "STOP_KNOCKBACK @Victim"
+    ]
+   },
+   "2": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "STOP_KNOCKBACK @Victim"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "STOP_KNOCKBACK @Victim"
+    ]
+   }
+  }
+ },
+ "nightowl": {
+  "display": "Night Owl",
+  "type": "ATTACK_MOB",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": [
+     "%is night% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:25"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": [
+     "%is night% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:35"
+    ]
+   },
+   "3": {
+    "chance": 80,
+    "cooldown": 0,
+    "conditions": [
+     "%is night% = true : %allow%"
+    ],
+    "effects": [
+     "INCREASE_DAMAGE:45"
+    ]
+   }
+  }
+ },
+ "nightwalker": {
+  "display": "Nightwalker",
+  "type": "ATTACK_MOB",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 40,
+    "cooldown": 0,
+    "conditions": [
+     "%is night% = true : %allow%"
+    ],
+    "effects": [
+     "POTION:SLOW:10:400 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 70,
+    "cooldown": 0,
+    "conditions": [
+     "%is night% = true : %allow%"
+    ],
+    "effects": [
+     "POTION:SLOW:10:400 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 0,
+    "conditions": [
+     "%is night% = true : %allow%"
+    ],
+    "effects": [
+     "POTION:SLOW:10:400 @Victim"
+    ]
+   }
+  }
+ },
+ "launch": {
+  "display": "Launch",
+  "type": "RIGHT_CLICK",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:8",
+     "PARTICLE:CLOUD:20:2"
+    ]
+   },
+   "2": {
+    "chance": 27,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:9",
+     "PARTICLE:CLOUD:20:2"
+    ]
+   },
+   "3": {
+    "chance": 35,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "BOOST:UP:10",
+     "PARTICLE:CLOUD:20:2"
+    ]
+   }
+  }
+ },
+ "slingshot": {
+  "display": "Slingshot",
+  "type": "RIGHT_CLICK",
+  "group": "LEGENDARY",
+  "applies": [
+   "ELYTRA"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 20,
+    "cooldown": 15,
+    "conditions": [
+     "%is holding% contains FIREWORK : %stop%"
+    ],
+    "effects": [
+     "BOOST:UP:10"
+    ]
+   },
+   "2": {
+    "chance": 40,
+    "cooldown": 10,
+    "conditions": [
+     "%is holding% contains FIREWORK : %stop%"
+    ],
+    "effects": [
+     "BOOST:UP:12"
+    ]
+   },
+   "3": {
+    "chance": 50,
+    "cooldown": 5,
+    "conditions": [
+     "%is holding% contains FIREWORK : %stop%"
+    ],
+    "effects": [
+     "BOOST:UP:16"
+    ]
+   }
+  }
+ },
+ "nulify": {
+  "display": "Nulify",
+  "type": "ATTACK",
+  "group": "FABLED",
+  "applies": [
+   "ALL_SWORD",
+   "ALL_AXE"
+  ],
+  "maxLevel": 4,
+  "levels": {
+   "1": {
+    "chance": 8,
+    "cooldown": 10,
+    "conditions": [
+     "%souls on item% < 40 : %stop%"
+    ],
+    "effects": [
+     {
+      "REMOVE_SOULS": "40 @Attacker"
+     },
+     "INCREASE_DAMAGE:100",
+     "POTION:BLINDNESS:0:80 @Victim",
+     "PARTICLE:FLASH:1:0 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 10,
+    "conditions": [
+     "%souls on item% < 40 : %stop%"
+    ],
+    "effects": [
+     {
+      "REMOVE_SOULS": "40 @Attacker"
+     },
+     "POTION:BLINDNESS:1:80 @Victim",
+     "PARTICLE:FLASH:2:0 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "INCREASE_DAMAGE:100",
+     "POTION:BLINDNESS:2:80 @Victim",
+     "PARTICLE:FLASH:3:0 @Victim"
+    ]
+   },
+   "4": {
+    "chance": 14,
+    "cooldown": 10,
+    "conditions": [
+     "%souls on item% < 40 : %stop%"
+    ],
+    "effects": [
+     {
+      "REMOVE_SOULS": "40 @Attacker"
+     },
+     "POTION:BLINDNESS:3:80 @Victim",
+     "PARTICLE:FLASH:4:0 @Victim"
+    ]
+   }
+  }
+ },
+ "rush": {
+  "display": "Rush",
+  "type": "ELYTRA_FLY",
+  "group": "FABLED",
+  "applies": [
+   "ELYTRA"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": [
+     "%souls on item% < 10 : %stop%"
+    ],
+    "effects": [
+     "REMOVE_SOULS:10",
+     "POTION:SPEED:3:60"
+    ]
+   },
+   "2": {
+    "chance": 25,
+    "cooldown": 5,
+    "conditions": [
+     "%souls on item% < 10 : %stop%"
+    ],
+    "effects": [
+     "REMOVE_SOULS:10",
+     "POTION:SPEED:4:60"
+    ]
+   },
+   "3": {
+    "chance": 26,
+    "cooldown": 5,
+    "conditions": [
+     "%souls on item% < 10 : %stop%"
+    ],
+    "effects": [
+     "REMOVE_SOULS:10",
+     "POTION:SPEED:5:60"
+    ]
+   }
+  }
+ },
+ "diploid": {
+  "display": "Diploid",
+  "type": "KILL_MOB",
+  "group": "FABLED",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 6,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   },
+   "4": {
+    "chance": 28,
+    "cooldown": 7,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   },
+   "5": {
+    "chance": 30,
+    "cooldown": 8,
+    "conditions": null,
+    "effects": [
+     "MORE_DROPS:1"
+    ]
+   }
+  }
+ },
+ "multiplication": {
+  "display": "Multiplication",
+  "type": "MINING",
+  "group": "FABLED",
+  "applies": [
+   "ALL_PICKAXE"
+  ],
+  "maxLevel": 5,
+  "levels": {
+   "1": {
+    "chance": 15,
+    "cooldown": 5,
+    "conditions": [
+     "%block type% contains ORE : %allow%",
+     "%souls on item% > 4: %allow%"
+    ],
+    "effects": [
+     "MORE_DROPS:1",
+     "REMOVE_SOULS:5"
+    ]
+   },
+   "2": {
+    "chance": 20,
+    "cooldown": 5,
+    "conditions": [
+     "%block type% contains ORE : %allow%",
+     "%souls on item% > 4: %allow%"
+    ],
+    "effects": [
+     "MORE_DROPS:1",
+     "REMOVE_SOULS:5"
+    ]
+   },
+   "3": {
+    "chance": 25,
+    "cooldown": 6,
+    "conditions": [
+     "%block type% contains ORE : %allow%",
+     "%souls on item% > 4: %allow%"
+    ],
+    "effects": [
+     "MORE_DROPS:1",
+     "REMOVE_SOULS:5"
+    ]
+   },
+   "4": {
+    "chance": 28,
+    "cooldown": 7,
+    "conditions": [
+     "%block type% contains ORE : %allow%",
+     "%souls on item% > 4: %allow%"
+    ],
+    "effects": [
+     "MORE_DROPS:1",
+     "REMOVE_SOULS:5"
+    ]
+   },
+   "5": {
+    "chance": 30,
+    "cooldown": 8,
+    "conditions": [
+     "%block type% contains ORE : %allow%",
+     "%souls on item% > 4: %allow%"
+    ],
+    "effects": [
+     "MORE_DROPS:1",
+     "REMOVE_SOULS:5"
+    ]
+   }
+  }
+ },
+ "fuddle": {
+  "display": "Fuddle",
+  "type": "ATTACK",
+  "group": "ULTIMATE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "SHUFFLE_HOTBAR @Victim"
+    ]
+   },
+   "2": {
+    "chance": 7,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "SHUFFLE_HOTBAR @Victim"
+    ]
+   },
+   "3": {
+    "chance": 9,
+    "cooldown": 15,
+    "conditions": null,
+    "effects": [
+     "SHUFFLE_HOTBAR @Victim"
+    ]
+   }
+  }
+ },
+ "spiritmaster": {
+  "display": "Spiritmaster",
+  "type": "KILL_PLAYER",
+  "group": "FABLED",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 35,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "2": {
+    "chance": 45,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "3": {
+    "chance": 55,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   }
+  }
+ },
+ "axeofspirits": {
+  "display": "Axe of Spirits",
+  "type": "KILL_PLAYER",
+  "group": "FABLED",
+  "applies": [
+   "ALL_AXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 45,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "2": {
+    "chance": 65,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "3": {
+    "chance": 75,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   }
+  }
+ },
+ "soulminer": {
+  "display": "Soulminer",
+  "type": "MINING",
+  "group": "FABLED",
+  "applies": [
+   "ALL_PICKAXE"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "2": {
+    "chance": 10,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "3": {
+    "chance": 15,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   }
+  }
+ },
+ "soulgrind": {
+  "display": "Soulgrind",
+  "type": "KILL_MOB",
+  "group": "FABLED",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   },
+   "3": {
+    "chance": 90,
+    "cooldown": 0,
+    "conditions": null,
+    "effects": [
+     "ADD_SOULS:1",
+     "PARTICLE:HEART:1:0"
+    ]
+   }
+  }
+ },
+ "deranged": {
+  "display": "Deranged",
+  "type": "ATTACK",
+  "group": "LEGENDARY",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 5,
+    "cooldown": 10,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Aoe{radius=5,target=damageable}"
+    ]
+   },
+   "2": {
+    "chance": 8,
+    "cooldown": 12,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Aoe{radius=6,target=damageable}"
+    ]
+   },
+   "3": {
+    "chance": 12,
+    "cooldown": 14,
+    "conditions": null,
+    "effects": [
+     "LIGHTNING @Aoe{radius=7,target=damageable}"
+    ]
+   }
+  }
+ },
+ "magnet": {
+  "display": "Magnet",
+  "type": "ATTACK",
+  "group": "ELITE",
+  "applies": [
+   "ALL_SWORD"
+  ],
+  "maxLevel": 3,
+  "levels": {
+   "1": {
+    "chance": 30,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PULL_CLOSER:1 @Victim"
+    ]
+   },
+   "2": {
+    "chance": 60,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PULL_CLOSER:2 @Victim"
+    ]
+   },
+   "3": {
+    "chance": 100,
+    "cooldown": 5,
+    "conditions": null,
+    "effects": [
+     "PULL_CLOSER:3 @Victim"
+    ]
+   }
+  }
+ }
+}

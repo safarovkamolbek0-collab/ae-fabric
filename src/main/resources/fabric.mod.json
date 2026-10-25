@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "ae_fabric",
+  "version": "${version}",
+  "name": "AdvancedEnchantments (Fabric)",
+  "description": "AdvancedEnchantments 9.1.5 plaginining Fabric 1.21.1 portlangan varianti.",
+  "authors": [
+    "AdvancedPlugins (asl muallif)"
+  ],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.advancedplugins.ae.fabric.AEFabric"
+    ],
+    "client": [
+      "net.advancedplugins.ae.fabric.ClientTooltips"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

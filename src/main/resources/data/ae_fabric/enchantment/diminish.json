@@ -1,0 +1,18 @@
+{
+  "description": {
+    "translate": "enchantment.ae_fabric.diminish"
+  },
+  "supported_items": "#minecraft:enchantable/weapon",
+  "weight": 5,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 2,
+  "slots": [ "mainhand" ]
+}
