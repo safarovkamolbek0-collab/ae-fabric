@@ -473,6 +473,25 @@ public final class AEEngine {
         }
     }
 
+    public static void fireOnStack(String type, LivingEntity holder, LivingEntity other, ItemStack stack) {
+        if (busy || stack.isEmpty()) {
+            return;
+        }
+        busy = true;
+        try {
+            for (Ench ench : ENCHANTS) {
+                if (hasType(ench, type)) {
+                    int lvl = levelOf(holder, ench.name(), stack);
+                    if (lvl > 0) {
+                        fire(ench, lvl, holder, other, true);
+                    }
+                }
+            }
+        } finally {
+            busy = false;
+        }
+    }
+
     public static void register() {
         load();
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((victim, source, amount) -> !cancelsDamage(victim));

@@ -15,6 +15,7 @@ public class AEFabric implements ModInitializer {
         BreakExtras.register();
         ExtraEnchants.register();
         AECommands.register();
+        RightClick.register();
         LOGGER.info("AdvancedEnchantments (Fabric port) ishga tushdi.");
     }
 }
