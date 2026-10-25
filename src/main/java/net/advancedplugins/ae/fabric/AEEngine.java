@@ -7,20 +7,24 @@ import com.google.gson.JsonParser;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Vec3d;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -30,14 +34,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Asl AdvancedEnchantments effektlarini ae_enchants.json dan oʻqib ishlatadi.
- * Qoʻllab-quvvatlanadi: POTION, ADD_HEALTH, DO_HARM, LIGHTNING, BURN, EXTINGUISH, PULL_AWAY, PULL_CLOSER,
- * DECREASE_DAMAGE, NEGATE_DAMAGE, HALF_DAMAGE, DOUBLE_DAMAGE, INCREASE_DAMAGE, CANCEL_EVENT.
+ * AdvancedEnchantments effektlarini ae_enchants.json dan oʻqib ishlatadi.
  */
 public final class AEEngine {
 
@@ -150,16 +151,11 @@ public final class AEEngine {
 
     private static String randomized(String raw) {
         Matcher m = RANDOM_NUMBER.matcher(raw);
-        return m.replaceAll(match -> String.valueOf(randomIn(match)));
-    }
-
-    private static int randomIn(MatchResult match) {
-        int a = Integer.parseInt(match.group(1));
-        int b = Integer.parseInt(match.group(2));
-        if (b <= a) {
-            return a;
-        }
-        return a + RNG.nextInt(b - a + 1);
+        return m.replaceAll(match -> {
+            int a = Integer.parseInt(match.group(1));
+            int b = Integer.parseInt(match.group(2));
+            return String.valueOf(b <= a ? a : a + RNG.nextInt(b - a + 1));
+        });
     }
 
     private static void apply(String raw, LivingEntity holder, LivingEntity other, boolean holderIsAttacker) {
@@ -169,7 +165,6 @@ public final class AEEngine {
             return;
         }
 
-        // Nishon: @Victim, @Attacker, boshqalari holder.
         LivingEntity target = holder;
         if (s.contains("@Victim") || s.contains("%victim%")) {
             target = holderIsAttacker ? other : holder;
@@ -180,9 +175,8 @@ public final class AEEngine {
             return;
         }
 
-        // Zarba hodisasidagi ikki tomon.
-        LivingEntity hitTarget = holderIsAttacker ? other : holder;   // zarba olgan
-        LivingEntity defender = holderIsAttacker ? other : holder;    // himoyalanayotgan
+        LivingEntity hitTarget = holderIsAttacker ? other : holder;
+        LivingEntity defender = holderIsAttacker ? other : holder;
 
         String[] parts = tokens[0].split(":");
         switch (parts[0]) {
@@ -204,19 +198,13 @@ public final class AEEngine {
                 target.heal(amount);
                 feedback(target, true);
             }
-            case "DO_HARM" -> {
-                float amount = parts.length > 1 ? parseFloatSafe(parts[1], 1f) : 1f;
+            case "DO_HARM", "LIGHTNING" -> {
+                float amount = parts[0].equals("LIGHTNING") ? 5f
+                        : (parts.length > 1 ? parseFloatSafe(parts[1], 1f) : 1f);
                 damageSafe(target, target.getDamageSources().magic(), amount);
                 feedback(target, false);
             }
-            case "LIGHTNING" -> {
-                damageSafe(target, target.getDamageSources().magic(), 5f);
-                feedback(target, false);
-            }
-            case "BURN" -> {
-                int seconds = parts.length > 1 ? parseIntSafe(parts[1], 2) : 2;
-                target.setOnFireFor(seconds);
-            }
+            case "BURN" -> target.setOnFireFor(parts.length > 1 ? parseIntSafe(parts[1], 2) : 2);
             case "EXTINGUISH" -> target.setFireTicks(0);
             case "PULL_AWAY" -> {
                 double strength = parts.length > 1 ? parseFloatSafe(parts[1], 1f) * 0.4 : 0.4;
@@ -227,19 +215,62 @@ public final class AEEngine {
                 target.takeKnockback(strength, target.getX() - holder.getX(), target.getZ() - holder.getZ());
             }
             case "DECREASE_DAMAGE", "NEGATE_DAMAGE" -> {
-                // Zarar bo'lib o'tgan, endi uning bir qismini qaytaramiz (sog'ayish).
                 float pct = parts.length > 1 ? parseFloatSafe(parts[1], 15f) : 15f;
                 defender.heal(currentDamage * pct / 100f);
             }
             case "HALF_DAMAGE" -> defender.heal(currentDamage * 0.5f);
-            case "DOUBLE_DAMAGE" -> {
-                // Zarar yana bir marta beriladi.
-                damageSafe(hitTarget, hitTarget.getDamageSources().magic(), currentDamage);
-            }
+            case "DOUBLE_DAMAGE" -> damageSafe(hitTarget, hitTarget.getDamageSources().magic(), currentDamage);
             case "INCREASE_DAMAGE" -> {
-                // Hujumchi qurolidagi enchant: qoʻshimcha zarar qurbonga.
                 float pct = parts.length > 1 ? parseFloatSafe(parts[1], 10f) : 10f;
                 damageSafe(hitTarget, hitTarget.getDamageSources().magic(), currentDamage * pct / 100f);
+            }
+            case "CURE" -> {
+                // Oʻyinchidagi barcha zararli effektlarni olib tashlaydi.
+                for (StatusEffectInstance inst : new ArrayList<>(target.getStatusEffects())) {
+                    if (!inst.getEffectType().value().isBeneficial()) {
+                        target.removeStatusEffect(inst.getEffectType());
+                    }
+                }
+                feedback(target, true);
+            }
+            case "EXP" -> {
+                if (target instanceof PlayerEntity player) {
+                    player.addExperience(parts.length > 1 ? parseIntSafe(parts[1], 1) : 1);
+                }
+            }
+            case "ADD_FOOD" -> {
+                if (target instanceof PlayerEntity player) {
+                    player.getHungerManager().add(parts.length > 1 ? parseIntSafe(parts[1], 1) : 1, 0f);
+                }
+            }
+            case "TELEPORT_BEHIND" -> {
+                // Enchant egasi (holder) qurbon (other) orqasiga oʻtadi.
+                if (other == null) {
+                    return;
+                }
+                Vec3d back = other.getRotationVec(1f).multiply(-2.0);
+                holder.requestTeleport(other.getX() + back.x, other.getY(), other.getZ() + back.z);
+                feedback(holder, true);
+            }
+            case "DISARM" -> {
+                ItemStack hand = target.getEquippedStack(EquipmentSlot.MAINHAND);
+                if (!hand.isEmpty()) {
+                    target.dropStack(hand.copy());
+                    target.equipStack(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+            }
+            case "REMOVE_RANDOM_ARMOR" -> {
+                EquipmentSlot slot = ARMOR[RNG.nextInt(ARMOR.length)];
+                ItemStack piece = target.getEquippedStack(slot);
+                if (!piece.isEmpty()) {
+                    target.dropStack(piece.copy());
+                    target.equipStack(slot, ItemStack.EMPTY);
+                }
+            }
+            case "STEAL_HEALTH" -> {
+                float amount = parts.length > 1 ? parseFloatSafe(parts[1], 1f) : 1f;
+                damageSafe(hitTarget, hitTarget.getDamageSources().magic(), amount);
+                holder.heal(amount);
             }
             default -> {
                 // Hali qoʻllab-quvvatlanmaydi.
@@ -269,15 +300,12 @@ public final class AEEngine {
     }
 
     private static void damageSafe(LivingEntity target, DamageSource source, float amount) {
-        // Bu yerda busy tekshirilmaydi: zarar hodisasi ichida ham ishlashi kerak.
-        // Qayta-qayta chaqirilishi onHit ichidagi busy bayrogʻi bilan bloklanadi.
         if (amount <= 0f) {
             return;
         }
         target.damage(source, amount);
     }
 
-    /** Ta'sir zarrachalari: foydali effekt uchun baxtli zarrachalar, zararli uchun tutun. */
     private static void feedback(LivingEntity target, boolean good) {
         if (target.getWorld() instanceof ServerWorld serverWorld) {
             serverWorld.spawnParticles(
@@ -308,13 +336,14 @@ public final class AEEngine {
                 }
             }
 
+            boolean fall = source.isOf(DamageTypes.FALL);
             for (EquipmentSlot slot : ARMOR) {
                 ItemStack piece = victim.getEquippedStack(slot);
                 if (piece.isEmpty()) {
                     continue;
                 }
                 for (Ench ench : ENCHANTS) {
-                    if (hasType(ench, "DEFENSE")) {
+                    if (hasType(ench, "DEFENSE") || (fall && hasType(ench, "FALL_DAMAGE"))) {
                         int lvl = levelOf(victim, ench.name(), piece);
                         if (lvl > 0) {
                             fire(ench, lvl, victim, attacker != null ? attacker : victim, false);
@@ -340,7 +369,6 @@ public final class AEEngine {
         }
     }
 
-    /** CANCEL_EVENT: himoya enchant zararni butunlay bekor qiladi. */
     private static boolean cancelsDamage(LivingEntity victim) {
         for (EquipmentSlot slot : ARMOR) {
             ItemStack piece = victim.getEquippedStack(slot);
@@ -368,7 +396,7 @@ public final class AEEngine {
         return false;
     }
 
-    private static void onKill(LivingEntity victim, net.minecraft.entity.damage.DamageSource source) {
+    private static void onKill(LivingEntity victim, DamageSource source) {
         if (busy || !(source.getAttacker() instanceof LivingEntity attacker) || attacker == victim) {
             return;
         }
@@ -380,6 +408,32 @@ public final class AEEngine {
                     int lvl = levelOf(attacker, ench.name(), weapon);
                     if (lvl > 0) {
                         fire(ench, lvl, attacker, victim, true);
+                    }
+                }
+            }
+        } finally {
+            busy = false;
+        }
+    }
+
+    /** DEATH: oʻlgan oʻyinchining zirhidagi enchantlar ishlaydi. */
+    private static void onDeath(LivingEntity victim) {
+        if (busy) {
+            return;
+        }
+        busy = true;
+        try {
+            for (EquipmentSlot slot : ARMOR) {
+                ItemStack piece = victim.getEquippedStack(slot);
+                if (piece.isEmpty()) {
+                    continue;
+                }
+                for (Ench ench : ENCHANTS) {
+                    if (hasType(ench, "DEATH")) {
+                        int lvl = levelOf(victim, ench.name(), piece);
+                        if (lvl > 0) {
+                            fire(ench, lvl, victim, victim, false);
+                        }
                     }
                 }
             }
@@ -424,7 +478,10 @@ public final class AEEngine {
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((victim, source, amount) -> !cancelsDamage(victim));
         ServerLivingEntityEvents.AFTER_DAMAGE.register((victim, source, baseDamage, damageTaken, blocked) ->
                 onHit(victim, source, damageTaken));
-        ServerLivingEntityEvents.AFTER_DEATH.register((victim, source) -> onKill(victim, source));
+        ServerLivingEntityEvents.AFTER_DEATH.register((victim, source) -> {
+            onKill(victim, source);
+            onDeath(victim);
+        });
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if (server.getTicks() % 10 != 0) {
                 return;
