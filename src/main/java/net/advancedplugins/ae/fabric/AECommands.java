@@ -1,5 +1,6 @@
 package net.advancedplugins.ae.fabric;
 
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.enchantment.Enchantment;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 /**
  * /ae, /customenchants, /advancedenchantments buyruqlari.
+ * /ae list - barcha enchantlar, /ae help <nom> - enchant haqida maʼlumot.
  */
 public final class AECommands {
 
@@ -41,12 +43,18 @@ public final class AECommands {
                         .executes(ctx -> {
                             list(ctx.getSource());
                             return 1;
-                        }));
+                        }))
+                .then(CommandManager.literal("help")
+                        .then(CommandManager.argument("enchant", StringArgumentType.word())
+                                .executes(ctx -> {
+                                    help(ctx.getSource(), StringArgumentType.getString(ctx, "enchant"));
+                                    return 1;
+                                })));
     }
 
     private static void info(ServerCommandSource source) {
         source.sendFeedback(() -> Text.literal(
-                "AdvancedEnchantments (Fabric port) | Buyruqlar: /ae list, /enchant ae_fabric:<nom> <daraja>"), false);
+                "AdvancedEnchantments (Fabric port) | Buyruqlar: /ae list, /ae help <nom>, /enchant ae_fabric:<nom> <daraja>"), false);
     }
 
     private static void list(ServerCommandSource source) {
@@ -57,5 +65,17 @@ public final class AECommands {
                 .sorted()
                 .collect(Collectors.joining(", "));
         source.sendFeedback(() -> Text.literal("Enchantlar: " + names), false);
+    }
+
+    private static void help(ServerCommandSource source, String input) {
+        String name = input.startsWith(AEFabric.MOD_ID + ":") ? input.substring(AEFabric.MOD_ID.length() + 1) : input;
+        List<String> lines = AEEngine.describe(name);
+        if (lines.isEmpty()) {
+            source.sendFeedback(() -> Text.literal("Bunday enchant topilmadi: " + name), false);
+            return;
+        }
+        for (String line : lines) {
+            source.sendFeedback(() -> Text.literal(line), false);
+        }
     }
 }

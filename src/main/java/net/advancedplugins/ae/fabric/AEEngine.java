@@ -492,6 +492,23 @@ public final class AEEngine {
         }
     }
 
+    /** Enchant haqida maʼlumot satrlari (/ae help uchun). */
+    public static List<String> describe(String name) {
+        List<String> out = new ArrayList<>();
+        for (Ench ench : ENCHANTS) {
+            if (!ench.name().equalsIgnoreCase(name)) {
+                continue;
+            }
+            out.add("Enchant: " + ench.name() + " | Tur: " + ench.type() + " | Max daraja: " + ench.levels().size());
+            ench.levels().entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())
+                    .forEach(en -> out.add("Daraja " + en.getKey() + " (" + en.getValue().chance() + "%): "
+                            + String.join(", ", en.getValue().effects())));
+            break;
+        }
+        return out;
+    }
+
     public static void register() {
         load();
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((victim, source, amount) -> !cancelsDamage(victim));
